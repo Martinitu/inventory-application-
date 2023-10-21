@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Categorie:
+      input#name.form-control(type='text', placeholder='Indica, Sativa etc.' name='name' value=(undefined===categorie ? '' : categorie.name))
+      label(for='description') Description:
+      input#description.form-control(type='text', placeholder='description of caetgorie' name='description' value=(undefined===categorie ? '' : categorie.description))
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+   ul
+    for error in errors
+     li!= error.msg

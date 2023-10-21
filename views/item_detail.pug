@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Name: #{item.name}
+
+ 
+  p #[strong Description:] #{item.description}
+  p #[strong PRICE:] #{item.price}
+  p #[strong Number In tock:] #{item.numberInStock}
+  p #[strong Categorie: ]
+    each val, index in item.categorie
+      a(href=val.url) #{val.name}
+
+  hr
+  p
+    a(href=item.url+'/delete') Delete item
+  p
+    a(href=item.url+'/update') Update item  
+
+
+  
